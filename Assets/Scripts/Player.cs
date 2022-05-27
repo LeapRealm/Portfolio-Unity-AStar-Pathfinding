@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            transform.position += moveDir.normalized * speed * Time.deltaTime;
+            transform.position += moveDir.normalized * (speed * Time.deltaTime);
         }
     }
     

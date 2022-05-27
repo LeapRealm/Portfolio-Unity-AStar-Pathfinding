@@ -43,44 +43,6 @@ public class Map : MonoBehaviour
                     mapData[y, x] = TileType.Grass;
             }
         }
-        
-        // for (int y = 0; y < mapSize.y; y++)
-        // {
-        //     int count = 1;
-        //     for (int x = 0; x < mapSize.x; x++)
-        //     {
-        //         if (y % 2 == 0 || x % 2 == 0)
-        //             continue;
-        //         
-        //         if (y == mapSize.y - 2 && x == mapSize.x - 2)
-        //             continue;
-        //         
-        //         if (y == mapSize.y - 2)
-        //         {
-        //             mapData[y, x + 1] = TileType.Grass;
-        //             continue;
-        //         }
-        //         
-        //         if (x == mapSize.x - 2)
-        //         {
-        //             mapData[y + 1, x] = TileType.Grass;
-        //             continue;
-        //         }
-        //
-        //         if (Random.Range(0, 2) == 0)
-        //         {
-        //             mapData[y, x + 1] = TileType.Grass;
-        //             count++;
-        //         }
-        //         else
-        //         {
-        //             int randomIndex = Random.Range(0, count);
-        //             mapData[y + 1, x - randomIndex * 2] = TileType.Grass;
-        //             count = 1;
-        //         }
-        //     }
-        // }
-
         mapData[destPos.y, destPos.x] = TileType.Dest;
     }
     
@@ -142,5 +104,8 @@ public class Map : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 }
